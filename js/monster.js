@@ -42,8 +42,17 @@ shoot.addEventListener('click', function () {
     angle = angleInput.value * (Math.PI / 180);
     power = powerInput.value;
     throwingDistance = Math.round(((power * power) * Math.sin(2 * angle)) / fallingspeed);
+    checkIfHit();
     console.log(throwingDistance);
 });
+
+function checkIfHit() {
+    if (Math.abs(monsterDistance - throwingDistance) <= 20) {
+        alertBox.innerHTML = "Good job! You did hit the monster!";
+    } else {
+        alertBox.innerHTML = "Woops. You missed the monster by " + Math.abs(monsterDistance - throwingDistance);
+    }
+}
 
 function switchWindow() {
 
