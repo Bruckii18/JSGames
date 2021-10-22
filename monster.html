@@ -27,17 +27,14 @@
     <label for="hard">Hard</label>
     <input type="radio" name="difficulty" value="hard" id="hard">
 -->
-    <p>Now pick a map you want to play on.</p>
+    <p>Now pick the map you want to play on.</p>
     <p>This will affect the gravity of your bombs.</p>
-    <select name="world" id="world">
-        <option value="earth">Earth</option>
-        <option value="moon">Moon</option>
-        <option value="mars">Mars</option>
-        <option value="jupiter">Jupiter</option>
-    </select>
-    
-
-    <button id="startGame">Start Game</button>
+    <div id="worldSelection">
+        <div onclick="selectWorld('earth')">Earth</div>
+        <div onclick="selectWorld('moon')">Moon</div>
+        <div onclick="selectWorld('mars')">Mars</div>
+        <div onclick="selectWorld('jupiter')">Jupiter</div>
+    </div>
 </div>
 
 <div id="inGame" class="hidden">
@@ -52,6 +49,9 @@
         <button id="shoot">Throw object</button>
         <div id="alertBox">
         </div>
+
+        <img src="img/monsterHunter/bomb.png" id="bomb" alt="bomb">
+        <img src="img/monsterHunter/monster.png" id="monster" alt="monster">
     </div>
 
 </div>

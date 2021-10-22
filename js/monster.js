@@ -3,20 +3,23 @@ let angle;
 let power;
 let throwingDistance;
 let monsterDistance;
+let x = 0, y = 0, time = 0;
 
-startGame.addEventListener('click', function () {
-    setMonsterposition();
+function startGame () {
     gameMenu.classList.remove('active');
     inGame.classList.add('active');
-});
+    setMonsterposition();
+}
 
 function setMonsterposition() {
     monsterDistance = Math.round(Math.random() * 1000);
+    monster.style.left = monsterDistance + "px";
     monsterDistanceBox.innerHTML = "The monster is " + monsterDistance + "m from you away.";
 }
 
-world.addEventListener('change', function () {
-    switch (world.value) {
+function selectWorld (world) {
+    startGame();
+    switch (world) {
         case "earth":
             fallingspeed = 9.81;
             document.body.style.backgroundImage = "url(\"../img/monsterHunter/earth.jpg\")";
@@ -34,16 +37,18 @@ world.addEventListener('change', function () {
             document.body.style.backgroundImage = "url(\"../img/monsterHunter/jupiter.jpg\")";
             break;
     }
-});
+}
 
 
 
 shoot.addEventListener('click', function () {
+    angle = 0; power = 0; throwingDistance = 0; x = 0; y = 0; time = 0;
     angle = angleInput.value * (Math.PI / 180);
     power = powerInput.value;
     throwingDistance = Math.round(((power * power) * Math.sin(2 * angle)) / fallingspeed);
-    checkIfHit();
     console.log(throwingDistance);
+    startAnimation();
+    checkIfHit();
 });
 
 function checkIfHit() {
@@ -54,6 +59,17 @@ function checkIfHit() {
     }
 }
 
-function switchWindow() {
 
+function startAnimation() {
+    let timer = setInterval(function () {
+        y = -0.5 * fallingspeed * Math.pow(time, 2) + power * Math.sin(angle) * time;
+        x += 5;
+        if (y < 0) {
+            clearInterval(timer);
+        }
+        bomb.style.bottom = Math.round(y) + "px";
+        bomb.style.left = Math.round(x) + "px";
+        time += 0.1;
+        console.log("blah");
+    }, 10);
 }
