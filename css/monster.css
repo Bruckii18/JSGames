@@ -12,9 +12,6 @@ body > div {
     display: none;
 }
 
-.active {
-    display: block;
-}
 
 #settings {
     position: absolute;

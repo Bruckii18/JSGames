@@ -39,8 +39,6 @@ function selectWorld (world) {
     }
 }
 
-
-
 shoot.addEventListener('click', function () {
     angle = 0; power = 0; throwingDistance = 0; x = 0; y = 0; time = 0;
     angle = angleInput.value * (Math.PI / 180);
