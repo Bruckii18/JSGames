@@ -10,7 +10,8 @@ body, html {
 }
 
 .screen {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(33, 33, 33, 0.75);
+    color: #ffffff;
     align-items: center;
     box-shadow: 0px 0px 5px #777;
     display: none;
@@ -35,4 +36,66 @@ body, html {
     right: 0;
     margin: 0 auto;
     width: 400px;
+}
+
+#rockpaperscissor, #guessNumber {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-size: cover;
+}
+
+#rockpaperscissor {
+    background-image: url("../img/rockPaperScissors/wallpapper.jpg");
+}
+
+#guessNumber {
+    background-image: url("../img/guessingGame/gq_wallpaper.jpg");
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-container {
+    height: 300px;
+    width: 100%;
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+#monsterGameSelection {
+    background-image: url("../img/monsterHunter.jpg");
+}
+
+#rpsGameSelection {
+    background-image: url("../img/rps_wallpaper.jpg");
+}
+
+#guessingGameSelection {
+    background-image: url("../img/guessingGame.jpg");
+}
+
+
+
+.flex div {
+    padding: 1rem 3rem;
+    margin-bottom: 1rem;
+}
+
+.flex img {
+    height: 200px;
+    width: 200px;
+    transition: all 500ms;
+}
+
+h3, #textOutput, #displays p {
+    text-align: center;
+}
+
+#selection img:hover {
+    transform: scale(1.1);
 }

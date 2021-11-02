@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="guessNumber">
+    <div id="gameSettings" class="screen active">
+        <label for="upperLimitInput">Upperlimit</label>
+        <input type="number" name="upperLimitInput" id="upperLimitInput">
+        <label for="counterInput">Tries</label>
+        <input type="number" name="counterInput" id="counterInput">
+        <button onclick="startGame()">Start the Game</button>
+    </div>
+    <div class="screen">
+        <label for="guessNumberInput">Your guess</label>
+        <input type="number" name="guessNumberInput" id="guessNumberInput">
+        <button onclick="guess()">Guess</button>
+        <p id="textOutput"></p>
+
+    </div>
+</div>
+<script type="text/javascript" src="js/lib.js"></script>
+<script type="text/javascript" src="js/guessingGame.js"></script>
+</body>
+</html>

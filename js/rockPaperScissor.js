@@ -26,7 +26,7 @@ function play(userChoice) {
             } else {
                 createPopup("Leider verloren", true);
             }
-        }, 1000);
+        }, 500);
     }
 }
 
