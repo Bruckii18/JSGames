@@ -59,12 +59,25 @@ body, html {
     justify-content: space-around;
 }
 
-.flex-container {
-    height: 300px;
+#gameSelection {
+    height: 100vh;
+}
+
+#gameSelection a {
+    width: 33%;
+}
+
+#gameSelection .flex-item {
+    height: 100%;
     width: 100%;
     flex-grow: 1;
     background-size: cover;
     background-position: center;
+    transition: all 500ms;
+}
+
+#gameSelection .flex-item:hover {
+    transform: scale(1.1);
 }
 
 #monsterGameSelection {
@@ -78,8 +91,6 @@ body, html {
 #guessingGameSelection {
     background-image: url("../img/guessingGame.jpg");
 }
-
-
 
 .flex div {
     padding: 1rem 3rem;
