@@ -9,12 +9,11 @@ function startGame() {
     let activeDiv = document.getElementsByClassName('active')[0];
     activeDiv.classList.remove('active');
     activeDiv.nextElementSibling.classList.add('active');
-    console.log(guessNumber);
 }
 
 function guess() {
     let inputNumber = guessNumberInput.value;
-    if (guessNumber == inputNumber) {
+    if (guessNumber === inputNumber) {
         setTimeout(function () {
             createPopup("Du hast gewonnen! Die richtige Zahl war " + guessNumber, true);
         }, 500);

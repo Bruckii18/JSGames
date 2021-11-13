@@ -22,19 +22,19 @@ function selectWorld (world) {
     switch (world) {
         case "earth":
             fallingspeed = 9.81;
-            document.body.style.backgroundImage = "url(\"../img/monsterHunter/earth.jpg\")";
+            document.getElementsByTagName('main')[0].style.backgroundImage = "url(\"../img/monsterHunter/earth.jpg\")";
             break;
         case "moon":
             fallingspeed = 1.62;
-            document.body.style.backgroundImage = "url(\"../img/monsterHunter/moon.jpg\")";
+            document.getElementsByTagName('main')[0].style.backgroundImage = "url(\"../img/monsterHunter/moon.jpg\")";
             break;
         case "mars":
             fallingspeed = 3.69;
-            document.body.style.backgroundImage = "url(\"../img/monsterHunter/mars.jpg\")";
+            document.getElementsByTagName('main')[0].style.backgroundImage = "url(\"../img/monsterHunter/mars.jpg\")";
             break;
         case "jupiter":
             fallingspeed = 24.79;
-            document.body.style.backgroundImage = "url(\"../img/monsterHunter/jupiter.jpg\")";
+            document.getElementsByTagName('main')[0].style.backgroundImage = "url(\"../img/monsterHunter/jupiter.jpg\")";
             break;
     }
 }
@@ -44,7 +44,6 @@ shoot.addEventListener('click', function () {
     angle = angleInput.value * (Math.PI / 180);
     power = powerInput.value;
     throwingDistance = Math.round(((power * power) * Math.sin(2 * angle)) / fallingspeed);
-    console.log(throwingDistance);
     startAnimation();
     checkIfHit();
 });
@@ -61,13 +60,12 @@ function checkIfHit() {
 function startAnimation() {
     let timer = setInterval(function () {
         y = -0.5 * fallingspeed * Math.pow(time, 2) + power * Math.sin(angle) * time;
-        x += 5;
+        x = power * Math.cos(angle) * time;
         if (y < 0) {
             clearInterval(timer);
         }
         bomb.style.bottom = Math.round(y) + "px";
         bomb.style.left = Math.round(x) + "px";
         time += 0.1;
-        console.log("blah");
     }, 10);
 }

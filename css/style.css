@@ -1,19 +1,35 @@
+:root {
+    --lightblue: #28B4E5;
+    --darkgray: #202124;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body, html {
+    background-color: var(--lightblue);
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     margin: 0;
     padding: 0;
 }
 
+main {
+    align-items: center;
+    height: 88vh;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2vh;
+}
+
 .screen {
     background-color: rgba(33, 33, 33, 0.75);
     color: #ffffff;
     align-items: center;
-    box-shadow: 0px 0px 5px #777;
+    box-shadow: 0 0 5px #777;
     display: none;
     justify-content: center;
     flex-direction: column;
@@ -27,7 +43,7 @@ body, html {
 
 #errorPopup {
     background-color: #fff;
-    box-shadow: 0px 0px 5px #777;
+    box-shadow: 0 0 5px #777;
     padding: 5rem 0;
     position: absolute;
     text-align: center;
@@ -42,7 +58,6 @@ body, html {
     align-items: center;
     display: flex;
     justify-content: center;
-    height: 100vh;
     background-size: cover;
 }
 
@@ -51,7 +66,7 @@ body, html {
 }
 
 #guessNumber {
-    background-image: url("../img/guessingGame/gq_wallpaper.jpg");
+    background-image: url("../img/guessingGame.jpg");
 }
 
 .flex {
@@ -60,7 +75,8 @@ body, html {
 }
 
 #gameSelection {
-    height: 100vh;
+    height: 80%;
+    width: 100%;
 }
 
 #gameSelection a {
@@ -109,4 +125,64 @@ h3, #textOutput, #displays p {
 
 #selection img:hover {
     transform: scale(1.1);
+}
+
+header img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 5vh;
+    width: auto;
+}
+
+nav {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+}
+
+nav li {
+    flex: 33%;
+    text-align: center;
+    display: table;
+    height: 100%;
+}
+
+nav ul a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 500ms;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+nav ul a:hover {
+    background-color: #ffffff;
+    color: var(--lightblue);
+}
+
+footer {
+    background-color: var(--darkgray);
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    color: #ffffff;
+    margin: 0;
 }

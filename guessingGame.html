@@ -5,8 +5,18 @@
     <title>Guessing Game</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<header>
+    <a href="index.html"><img src="img/homeButton.PNG" alt="Home"></a>
+    <nav>
+        <ul>
+            <li><a href="monster.html">Monster Hunter Universe</a></li>
+            <li><a href="rockPaperScissor.html">Rock Paper Scissors</a></li>
+            <li><a href="guessingGame.html">Guess a Number</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
-<div id="guessNumber">
+<main id="guessNumber">
     <div id="gameSettings" class="screen active">
         <label for="upperLimitInput">Upperlimit</label>
         <input type="number" name="upperLimitInput" id="upperLimitInput">
@@ -21,7 +31,10 @@
         <p id="textOutput"></p>
 
     </div>
-</div>
+</main>
+<footer>
+    <p>&copy; 2021 Michael Bruckbauer</p>
+</footer>
 <script type="text/javascript" src="js/lib.js"></script>
 <script type="text/javascript" src="js/guessingGame.js"></script>
 </body>
